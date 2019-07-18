@@ -6,8 +6,8 @@ module.exports = (sequelize, DataTypes) => {
     priceId: DataTypes.INTEGER
   }, {});
   Show.associate = function(models) {
-    Show.hasMany(models.Commentary, {as: 'commentaries'});
-    Show.hasMany(models.Picture, {as: 'pictures'});
+    Show.hasMany(models.Commentary, {as: 'commentaries', onDelete: 'CASCADE', hooks:true});
+    Show.hasMany(models.Picture, {as: 'pictures', onDelete: 'CASCADE', hooks:true});
     Show.belongsTo(models.Price, {foreignKey: 'priceId'});
   };
   return Show;
