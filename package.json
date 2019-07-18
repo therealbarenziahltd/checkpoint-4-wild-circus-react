@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "description": "A retake of 'Wild Circus' exercice 5 months later",
   "scripts": {
-    "test": "./tests.sh",
-    "setup": "./.setup.sh",
-    "start": "./.start.sh"
+    "test": "chmod +x .tests.sh",
+    "start": " (cd backend && yarn) && (cd frontend && yarn) && (cd backend && x-terminal-emulator -e 'yarn start') && (cd frontend && yarn start)"
   },
   "author": "TheRealBarenziah",
   "license": "MIT"
