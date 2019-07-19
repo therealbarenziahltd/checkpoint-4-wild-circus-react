@@ -4,6 +4,7 @@
   "description": "A retake of 'Wild Circus' exercice 5 months later",
   "scripts": {
     "test": "chmod +x .tests.sh",
+    "impregnate": "cd backend && yarn impregnate",
     "start": " (cd backend && yarn) && (cd frontend && yarn) && (cd backend && x-terminal-emulator -e 'yarn start') && (cd frontend && yarn start)"
   },
   "author": "TheRealBarenziah",

@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www",
+    "impregnate": "chmod +x ./.impregnate.sh && ./.impregnate.sh",
     "lint": "./node_modules/.bin/eslint --color . --ext .js,.jsx",
     "lint:fix": "./node_modules/.bin/eslint --fix . --ext .js,.jsx"
   },
