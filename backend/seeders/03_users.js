@@ -5,7 +5,7 @@ const User = models.User;
 User.create({
   firstName: 'Daenerys',
   lastName: 'Targaryen',
-  email: 'd.stormborn@dragonstone.ovl',
+  email: 'dstormborn@dragonstone.ovl',
   password: 'dracarys',
   isAdmin: true,
   birthdate: faker.date.past(),

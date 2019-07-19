@@ -1,3 +1,4 @@
+/* eslint no-undef: 0 */
 const jwt = require('jsonwebtoken');
 const User = require('../models').User;
 
@@ -10,7 +11,6 @@ module.exports = {
       isAdmin: req.user.isAdmin
     };
     /* Signin jwt with your SECRET key */
-    // eslint-disable-next-line no-undef
     const token = jwt.sign(user, process.env.JWT_SECRET);
     /* Return user and token in json response */
     res.json({ user, token });
@@ -25,8 +25,8 @@ module.exports = {
       isAdmin: req.body.isAdmin || false
     })
       .then((user) => {
-      /* Signin jwt with your SECRET key */
-        const token = jwt.sign(user, 'your_jwt_secret');
+        /* Signin jwt with your SECRET key */
+        const token = jwt.sign(user.dataValues, process.env.JWT_SECRET);
         /* Return user and token in json response */
         res.json({ user, token });
       })
