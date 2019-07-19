@@ -8,6 +8,6 @@ for (let i = 0; i < 5; i++) {
     group: Math.floor((Math.random() * 3) + 10),
     school: 10,
   })
-    .then(() => console.log('Dracarys.'))
+    .then(() => console.log('"...Dracarys." -Daenerys Stormborn of the house Targaryen'))
     .catch((error) => console.log(error));
 }

@@ -2,12 +2,12 @@ const models = require('../models');
 const faker = require('faker');
 const Commentary = models.Commentary;
 
-for (let i = 0; i < 30; i++) {
+for (let i = 0; i < 100; i++) {
   Commentary.create({
     content: faker.hacker.phrase(),
-    userId: Math.floor(Math.random()*10),
-    showId: Math.floor(Math.random()*10)
+    userId: Math.floor((Math.random() * 49) + 1),
+    showId: Math.floor((Math.random() * 49) + 1)
   })
-    .then((user) => console.log(user))
+    .then(() => console.log('"You\'re a dragon. Be a dragon." - Lady Olenna of Highgarden'))
     .catch((error) => console.log(error));
 }
