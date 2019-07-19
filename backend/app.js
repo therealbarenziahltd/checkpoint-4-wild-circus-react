@@ -6,6 +6,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var authRouter = require('./routes/auth');
+var commentariesRouter = require('./routes/commentaries');
 
 const { localAuthStrategy } = require('./routes/strategies/local');
 const { jwtAuthStrategy } = require('./routes/strategies/jwt');
@@ -26,5 +27,6 @@ jwtAuthStrategy;
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
 app.use('/users', usersRouter);
+app.use('/comments', commentariesRouter);
 
 module.exports = app;
