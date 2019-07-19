@@ -28,11 +28,11 @@ localAuthStrategy;
 jwtAuthStrategy;
 
 app.use('/', indexRouter);
-app.use('/auth', authRouter);
-app.use('/users', usersRouter);
-app.use('/comments', commentariesRouter);
-app.use('/prices', pricesRouter);
-app.use('/pictures', picturesRouter);
-app.use('/shows', showsRouter);
+app.use('/api/auth', authRouter);
+app.use('/api/users', usersRouter);
+app.use('/api/comments', commentariesRouter);
+app.use('/api/prices', pricesRouter);
+app.use('/api/pictures', picturesRouter);
+app.use('/api/shows', showsRouter);
 
 module.exports = app;
