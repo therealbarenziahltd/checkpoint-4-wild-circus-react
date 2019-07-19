@@ -2,7 +2,7 @@ const models = require('../models');
 const faker = require('faker');
 const Picture = models.Picture;
 
-for (let i = 0; i < 30; i++) {
+for (let i = 0; i < 150; i++) {
   Picture.create({
     url: faker.image.imageUrl(),
     showId: Math.floor((Math.random() * 49) + 1)

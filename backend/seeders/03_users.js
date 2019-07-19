@@ -13,7 +13,7 @@ User.create({
   .then(() => console.log('Dany lives <3.'))
   .catch((error) => console.log(error));
 
-for (let i = 0; i < 50; i++) {
+for (let i = 0; i < 100; i++) {
   User.create({
     firstName: faker.name.firstName(),
     lastName: faker.name.lastName(),
@@ -22,7 +22,7 @@ for (let i = 0; i < 50; i++) {
     isAdmin: false,
     birthdate: faker.date.past(),
   }, { include: 'commentaries' })
-    .then(() => console.log('"The seed is strong." -Ned Stark'))
+    .then(() => console.log('"You\'re a dragon. Be a dragon." - Lady Olenna of Highgarden'))
     .catch((error) => console.log(error));
 }
 
