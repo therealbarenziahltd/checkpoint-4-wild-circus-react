@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     showId: DataTypes.INTEGER
   }, {});
   Picture.associate = function(models) {
-    Picture.belongsTo(models.Show, {as: 'pictures'});
+    Picture.belongsTo(models.Show);
   };
   return Picture;
 };

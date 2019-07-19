@@ -8,6 +8,8 @@ var usersRouter = require('./routes/users');
 var authRouter = require('./routes/auth');
 var commentariesRouter = require('./routes/comments');
 var pricesRouter = require('./routes/prices');
+var picturesRouter = require('./routes/pictures');
+var showsRouter = require('./routes/shows');
 
 const { localAuthStrategy } = require('./routes/strategies/local');
 const { jwtAuthStrategy } = require('./routes/strategies/jwt');
@@ -30,5 +32,7 @@ app.use('/auth', authRouter);
 app.use('/users', usersRouter);
 app.use('/comments', commentariesRouter);
 app.use('/prices', pricesRouter);
+app.use('/pictures', picturesRouter);
+app.use('/shows', showsRouter);
 
 module.exports = app;

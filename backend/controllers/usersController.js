@@ -10,7 +10,7 @@ module.exports = {
   show: (req, res) => {
     User.scope('withoutPassword').findByPk(req.params.id)
       .then((user) => user? res.json({ user: user }) : res.status(404).json({error: `User with id ${req.params.id} can't be found.`}))
-      .catch((error) => res.status(503).json({ error: 'Service unavailable' }));
+      .catch((error) => res.status(503).json({ error, message: 'Service unavailable' }));
   },
 
   create: (req, res) => {
@@ -22,7 +22,7 @@ module.exports = {
       isAdmin: req.body.isAdmin || false,
       birthdate: req.body.birthdate
     })
-      .then((user) => res.status(201).json({ response: 'User added to database.'}))
+      .then(() => res.status(201).json({ response: 'User added to database.'}))
       .catch((error) => res.status(404).json({ error }));
   },
 
@@ -50,6 +50,6 @@ module.exports = {
           .then((user) => { res.json({ response: `User ${user.firstName} ${user.lastName} has been deleted.`}); })
           .catch((error) => res.status(403).json({ error, message: '403 Please contact Admin' }));
       })
-      .catch((error) => res.status(404).json({ error: '404 User Not Found' }));
+      .catch((error) => res.status(404).json({ error, message: '404 User Not Found' }));
   },
 };

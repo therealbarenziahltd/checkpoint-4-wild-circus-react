@@ -2,7 +2,7 @@ const models = require('../models');
 const faker = require('faker');
 const Commentary = models.Commentary;
 
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < 200; i++) {
   Commentary.create({
     content: faker.hacker.phrase(),
     userId: Math.floor((Math.random() * 49) + 1),
