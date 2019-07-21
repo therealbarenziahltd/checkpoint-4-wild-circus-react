@@ -1,15 +1,20 @@
 import React from 'react';
 import { Media } from 'reactstrap';
 
-const CommentaryCard = ({author, content, emoteUrl}) => {
+const CommentaryCard = ({author, content, date}) => {
   return (
     <Media>
       <Media left href="#">
-        <Media object data-src={emoteUrl} alt="Generic placeholder image" />
+        <Media 
+          object 
+          data-src="https://picsum.photos/200/200" 
+          src="https://picsum.photos/200/200"
+          style={{height:'100px'}}
+          alt="=(" />
       </Media>
       <Media body>
         <Media heading>
-          {author}    
+          {author}, written the {date}  
         </Media>
         {content}
       </Media>
