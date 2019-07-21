@@ -2,9 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { login } from '../../stores/actions/auth';
-import { Container, Row, Col } from 'reactstrap';
-import { InputText } from 'primereact/inputtext';
-import { Button } from 'primereact/button';
+import { Container, Row, Col, Button, Input } from 'reactstrap';
 import { Link, Redirect } from 'react-router-dom';
 
 export class LoginForm extends Component {
@@ -24,7 +22,7 @@ export class LoginForm extends Component {
   render() {
     const { user } = this.props.authentification;
     if (user.isConnected && user.isAdmin) {
-      return <Redirect to="/admin/home" />;
+      return <Redirect to="/about" />;
     }
     return (
        <Container  className="flex-column flex-center flex-center-items full-height-screen color fond_logo">
@@ -34,7 +32,7 @@ export class LoginForm extends Component {
               <span className="p-inputgroup-addon Inputbackground">
                 <i className="pi pi-user"></i>
               </span>
-              <InputText className='Inputbackground'
+              <Input className='Inputbackground'
                 value={this.state.email}
                 onChange={(e) => this.setState({ email: e.target.value })}
                 placeholder="Username" />
@@ -47,7 +45,7 @@ export class LoginForm extends Component {
               <span className="p-inputgroup-addon Inputbackground ">
               <i className="pi pi-lock"></i>
               </span>
-              <InputText className='Inputbackground'
+              <Input className='Inputbackground'
                 type="password"
                 value={this.state.password}
                 onChange={(e) => this.setState({ password: e.target.value })}
@@ -58,10 +56,9 @@ export class LoginForm extends Component {
         <Row className="marged-top">
           <Col xs="12" >
             <Button onClick={this.loginUser} label="Se connecter" className="p-button-raised ,
-            Inputbackgroundbutton" icon="pi pi-angle-right" />
+            Inputbackgroundbutton" icon="pi pi-angle-right">Log in</Button>
           </Col>
         </Row>
-        <Link  to="/admin" className="font_color">Click to go to admin</Link>
       </Container>
     );
   }

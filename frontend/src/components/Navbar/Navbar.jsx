@@ -9,6 +9,8 @@ import {
   NavLink,
   Button
 } from 'reactstrap';
+import { connect } from 'react-redux';
+import { logout } from '../../stores/actions/auth';
 import franceFlag from '../../assets/icons/france-flag.png';
 import usaFlag from '../../assets/icons/usa-flag.png';
 import './Navbar.scss';
@@ -91,12 +93,21 @@ class Navnav extends React.Component {
                   }
                 />
               </NavItem>
-              <NavItem>
-                <Button color="danger" onClick={this.toggleLoginModal}>Log in</Button>
-              </NavItem>
-              <NavItem>
-                <Button color="danger" onClick={this.toggleSignupModal}>Sign Up</Button>
-              </NavItem>
+              {
+                this.props.authentification.user.isConnected && this.props.authentification.user.isAdmin ?
+                  <NavItem>
+                    <Button color="danger" onClick={this.props.logout}>Log out</Button>
+                  </NavItem>
+                  :
+                  <>
+                  <NavItem>
+                    <Button color="primary" onClick={this.toggleLoginModal}>Log in</Button>
+                  </NavItem>
+                  <NavItem>
+                    <Button color="success" onClick={this.toggleSignupModal}>Sign Up</Button>
+                  </NavItem>
+                  </>
+              }
             </Nav>
           </Collapse>
         </Navbar>
@@ -107,4 +118,12 @@ class Navnav extends React.Component {
   }
 }
 
-export default withLocalize(Navnav);
+const mapStateToProps = (state) => ({
+  ...state
+});
+
+const mapDispatchToProps = {
+  logout
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(withLocalize(Navnav));

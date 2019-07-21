@@ -1,7 +1,8 @@
 /* eslint react/no-multi-comp: 0, react/prop-types: 0 */
 
 import React from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Modal, ModalHeader, ModalBody} from 'reactstrap';
+import AuthForm from '../AuthForm/AuthForm';
 
 class LoginModal extends React.Component {
   constructor(props) {
@@ -10,6 +11,7 @@ class LoginModal extends React.Component {
   }
 
   render() {
+    const closeBtn = <button className="close" onClick={this.props.toggle}>&times;</button>;
     return (
       <div>
         <Modal 
@@ -17,18 +19,10 @@ class LoginModal extends React.Component {
           className={this.props.className}
           toggle={this.props.toggle}
         >
-          <ModalHeader>Log in</ModalHeader>
+          <ModalHeader close={closeBtn}>Log in</ModalHeader>
           <ModalBody>
-            !      
+            <AuthForm />
           </ModalBody>
-          <ModalFooter>
-            <Button 
-              color="primary" 
-              onClick={() => alert('hello')}>Do Something</Button>{' '}
-            <Button
-              color="secondary" 
-              onClick={this.props.toggle}>Cancel</Button>
-          </ModalFooter>
         </Modal>
       </div>
     );
