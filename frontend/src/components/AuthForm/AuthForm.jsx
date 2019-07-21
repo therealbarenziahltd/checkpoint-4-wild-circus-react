@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { login } from '../../stores/actions/auth';
 import { Container, Row, Col, Button, Input } from 'reactstrap';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 export class LoginForm extends Component {
   constructor(props) {
@@ -15,7 +15,7 @@ export class LoginForm extends Component {
     };
   }
 
-  loginUser = () => {
+  loginUser(){
     this.props.login(this.state.email, this.state.password);
   }
 
@@ -25,7 +25,7 @@ export class LoginForm extends Component {
       return <Redirect to="/about" />;
     }
     return (
-       <Container  className="flex-column flex-center flex-center-items full-height-screen color fond_logo">
+      <Container  className="flex-column flex-center flex-center-items full-height-screen color fond_logo">
         <Row className="bloc">
           <Col xs="12" md="6" >
             <div className="p-inputgroup ">
@@ -38,12 +38,12 @@ export class LoginForm extends Component {
                 placeholder="Username" />
             </div>
           </Col>
-          </Row>
-          <Row>
+        </Row>
+        <Row>
           <Col xs="12" md="6">
             <div className="p-inputgroup">
               <span className="p-inputgroup-addon Inputbackground ">
-              <i className="pi pi-lock"></i>
+                <i className="pi pi-lock"></i>
               </span>
               <Input className='Inputbackground'
                 type="password"
@@ -55,7 +55,7 @@ export class LoginForm extends Component {
         </Row>
         <Row className="marged-top">
           <Col xs="12" >
-            <Button onClick={this.loginUser} label="Se connecter" className="p-button-raised ,
+            <Button onClick={() => this.loginUser} label="Se connecter" className="p-button-raised ,
             Inputbackgroundbutton" icon="pi pi-angle-right">Log in</Button>
           </Col>
         </Row>

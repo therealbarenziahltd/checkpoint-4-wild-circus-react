@@ -3,7 +3,6 @@ import Axios from 'axios';
 import ShowCard from '../ShowCard/ShowCard';
 import { Container, Col, Row } from 'reactstrap';
 import prettifyDate from '../../utils/prettifyDate';
-import ShowPicturesCarousel from '../ShowCard/ShowPicturesCarousel';
 
 export default class ShowsPage extends Component {
   constructor(props) {
@@ -18,7 +17,6 @@ export default class ShowsPage extends Component {
     }
     )
       .then((res) => {
-        console.log(res);
         this.setState({shows: res.data.shows});
       })
       .catch((err) => err);
