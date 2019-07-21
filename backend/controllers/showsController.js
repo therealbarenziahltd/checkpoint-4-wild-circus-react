@@ -2,7 +2,7 @@ const Show = require('../models').Show;
 
 module.exports = {
   index: (req, res) => {
-    Show.findAll()
+    Show.findAll({ include: { all: true, nested: true } })
       .then((shows) => res.json({ shows }))
       .catch((err) => res.status(404).send(err));
   },
