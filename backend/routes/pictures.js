@@ -10,10 +10,10 @@ const picturesController = require('../controllers/picturesController');
 router.post('/', passport.authenticate('jwt', { session: false }), picturesController.create);
 
 //READ ALL (private)
-router.get('/', passport.authenticate('jwt', { session: false }), picturesController.index);
+router.get('/', picturesController.index);
 
 //READ ONE (private)
-router.get('/:id', passport.authenticate('jwt', { session: false }), picturesController.show);
+router.get('/:id', picturesController.show);
 
 //UPDATE (private)
 router.put('/:id', passport.authenticate('jwt', { session: false }), picturesController.update);

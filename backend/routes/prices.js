@@ -10,10 +10,10 @@ const pricesController = require('../controllers/pricesController');
 router.post('/', passport.authenticate('jwt', { session: false }), pricesController.create);
 
 //READ ALL (private)
-router.get('/', passport.authenticate('jwt', { session: false }), pricesController.index);
+router.get('/', pricesController.index);
 
 //READ ONE (private)
-router.get('/:id', passport.authenticate('jwt', { session: false }), pricesController.show);
+router.get('/:id', pricesController.show);
 
 //UPDATE (private)
 router.put('/:id', passport.authenticate('jwt', { session: false }), pricesController.update);

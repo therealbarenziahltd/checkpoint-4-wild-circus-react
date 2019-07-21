@@ -10,10 +10,10 @@ const commentariesController = require('../controllers/commentariesController');
 router.post('/', passport.authenticate('jwt', { session: false }), commentariesController.create);
 
 //READ ALL (private)
-router.get('/', passport.authenticate('jwt', { session: false }), commentariesController.index);
+router.get('/', commentariesController.index);
 
 //READ ONE (private)
-router.get('/:id', passport.authenticate('jwt', { session: false }), commentariesController.show);
+router.get('/:id', commentariesController.show);
 
 //UPDATE (private)
 router.put('/:id', passport.authenticate('jwt', { session: false }), commentariesController.update);
