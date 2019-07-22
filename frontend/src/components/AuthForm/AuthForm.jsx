@@ -13,6 +13,7 @@ export class LoginForm extends Component {
       email: '',
       password: ''
     };
+    this.loginUser = this.loginUser.bind(this);
   }
 
   loginUser(){
@@ -22,7 +23,7 @@ export class LoginForm extends Component {
   render() {
     const { user } = this.props.authentification;
     if (user.isConnected && user.isAdmin) {
-      return <Redirect to="/about" />;
+      return <Redirect to="/comments" />;
     }
     return (
       <Container  className="flex-column flex-center flex-center-items full-height-screen color fond_logo">
@@ -55,7 +56,7 @@ export class LoginForm extends Component {
         </Row>
         <Row className="marged-top">
           <Col xs="12" >
-            <Button onClick={() => this.loginUser} label="Se connecter" className="p-button-raised ,
+            <Button onClick={this.loginUser} label="Se connecter" className="p-button-raised ,
             Inputbackgroundbutton" icon="pi pi-angle-right">Log in</Button>
           </Col>
         </Row>

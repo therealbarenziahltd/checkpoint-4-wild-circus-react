@@ -5,7 +5,6 @@ import CommentariesContainer from '../CommentariesContainer/CommentariesContaine
 export default function GoldenBookPage() {
   return (
     <div>
-      <p>GoldenBookPage component</p>
       <CommentaryForm />
       <CommentariesContainer />
     </div>

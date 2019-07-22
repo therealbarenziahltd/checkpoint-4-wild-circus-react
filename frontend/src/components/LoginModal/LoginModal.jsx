@@ -3,6 +3,7 @@
 import React from 'react';
 import { Modal, ModalHeader, ModalBody} from 'reactstrap';
 import AuthForm from '../AuthForm/AuthForm';
+import { connect } from 'react-redux';
 
 class LoginModal extends React.Component {
   constructor(props) {
@@ -21,7 +22,11 @@ class LoginModal extends React.Component {
         >
           <ModalHeader close={closeBtn}>Log in</ModalHeader>
           <ModalBody>
-            <AuthForm />
+            {this.props.authentification.user.isConnected ?
+              <p>You successfully connected !</p>
+              :
+              <AuthForm />
+            }
           </ModalBody>
         </Modal>
       </div>
@@ -29,4 +34,11 @@ class LoginModal extends React.Component {
   }
 }
 
-export default LoginModal;
+const mapStateToProps = (state) => ({
+  ...state
+});
+
+const mapDispatchToProps = {
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginModal);

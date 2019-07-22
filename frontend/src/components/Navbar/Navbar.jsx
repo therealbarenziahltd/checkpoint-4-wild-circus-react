@@ -62,7 +62,7 @@ class Navnav extends React.Component {
     return (
       <div className='myNavbar'>
         <Navbar color="dark" dark expand="md">
-          <NavbarBrand href="/home">Wild Circus</NavbarBrand>
+          <NavbarBrand href="/home"><img src='https://i.imgsafe.org/9f/9f70e288af.png' alt='' /></NavbarBrand>
           <NavbarToggler onClick={() => this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
@@ -101,7 +101,7 @@ class Navnav extends React.Component {
                   :
                   <>
                   <NavItem>
-                    <Button color="primary" onClick={this.toggleLoginModal}>Log in</Button>
+                    <Button color="primary" onClick={this.toggleLoginModal} className='my-login-button'>Log in</Button>
                   </NavItem>
                   <NavItem>
                     <Button color="success" onClick={this.toggleSignupModal}>Sign Up</Button>
@@ -111,8 +111,16 @@ class Navnav extends React.Component {
             </Nav>
           </Collapse>
         </Navbar>
-        <LoginModal visible={this.state.loginModalVisible} toggle={this.toggleLoginModal}/>
-        <SignUpModal visible={this.state.signupModalVisible} toggle={this.toggleSignupModal}/>
+        <LoginModal 
+          visible={this.state.loginModalVisible}
+          toggle={this.toggleLoginModal} 
+          className='modal-button'
+        />
+        <SignUpModal 
+          visible={this.state.signupModalVisible} 
+          toggle={this.toggleSignupModal} 
+          className='modal-button'
+        />
       </div>
     );
   }

@@ -1,9 +1,13 @@
 .myNavbar {
+  padding: 0 !important;
   .flag-image {
     margin: 5px;
     height: 20px !important;
   }
   .flag-opacity {
     opacity: 0.4;
+  }
+  .my-login-button{
+    margin-right: 15px !important;
   }
 }
