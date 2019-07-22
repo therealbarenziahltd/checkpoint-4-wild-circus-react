@@ -1,11 +1,15 @@
 .commentary-card {
-  border-color: black;
+  border-color: whitesmoke;
   border-width: 2px !important;
   border-style: dashed;
   margin-bottom: 5px !important
 }
 .author-style{
-  text-decoration: underline
+  text-decoration: underline;
+  font-family: 'Amatic SC', sans-serif;
+}
+.date-commentary-style{
+  font-family: 'Amatic SC', sans-serif;
 }
 .custom-container{
 display: flex !important;

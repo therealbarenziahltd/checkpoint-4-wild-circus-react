@@ -2,7 +2,7 @@ const Commentary = require('../models').Commentary;
 
 module.exports = {
   index: (req, res) => {
-    Commentary.findAll()
+    Commentary.findAll({ order: [ ['createdAt', 'DESC']]})
       .then((commentaries) => { res.json({ commentaries }); })
       .catch((error) => res.status(500).json({ error }));
   },

@@ -1,8 +1,22 @@
 .my-carousel {
   max-height: 20vh !important;
+  li {
+    display: none !important
+  }
   .show-image {
     max-height: 20vh !important;
   }
-  .carousel-controller {
-  }
+}
+.city-style{
+  text-decoration: underline;
+  font-family: 'Amatic SC', sans-serif;
+  font-size: 30px
+}
+.date-style{
+  font-family: 'Amatic SC', sans-serif;
+  font-size: 30px
+}
+.custom-container{
+display: flex !important;
+justify-content: center
 }

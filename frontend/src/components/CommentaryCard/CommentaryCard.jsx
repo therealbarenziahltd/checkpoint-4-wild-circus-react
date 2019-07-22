@@ -17,7 +17,7 @@ const CommentaryCard = ({author, content, date}) => {
         <Media body>
           <Media heading className='custom-container'>
             <p className="author-style">{author}</p>
-            <p className="date-style"> , the {date}</p>
+            <p className="date-commentary-style"> , the {date}</p>
           </Media>
           <em>"{content}"</em>
         </Media>
