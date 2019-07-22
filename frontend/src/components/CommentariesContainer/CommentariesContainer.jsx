@@ -28,21 +28,24 @@ export default class CommentariesContainer extends Component {
         this.setState({users: res.data.users});
       })
       .catch((err) => err);
-    await this.replaceUserIdByUserName(this.state.commentaries, this.state.users);
+      // await setTimeout(() => {
+      //   this.replaceUserIdByUserName(this.state.commentaries, this.state.users)
+      // }, 1000)
+    await this.replaceUserIdByUserName()
   }
 
-replaceUserIdByUserName = (rawCommentsArray, usersArray) => {
-let x = rawCommentsArray.map((comment) => {
-  return {
-    ...comment,
-    userId: usersArray.filter((user) => user.id === comment.userId)[0]
-  }
-}) 
-// this.setState(formatedComments)
-this.setState({formatedComments: x})
+replaceUserIdByUserName = () => {
+  let x = this.state.commentaries.map((comment) => {
+    let author = this.state.users.filter((user) => user.id === comment.userId)[0];
+    let authorName = `${author.firstName} ${author.lastName}`
+    return {
+      ...comment,
+      author: authorName
+    }
+  })
+this.setState({formatedComments: x}) 
 }
-  
-  
+
   render() {
     return (
       <div>
@@ -56,12 +59,12 @@ this.setState({formatedComments: x})
                 key={index} 
               >
                 <CommentaryCard 
-                  author={commentary.userId}
+                  author={commentary.author}
                   content={commentary.content}
                   date={prettifyDate(commentary.createdAt)} 
                   emoteUrl="https://picsum.photos/200/200"
-                />;
-              </Col>;
+                />
+              </Col>
             })}
           </Row>
         </Container>

@@ -1,24 +1,28 @@
 import React from 'react';
 import { Media } from 'reactstrap';
+import './CommentaryCard.scss';
 
 const CommentaryCard = ({author, content, date}) => {
   return (
-    <Media>
-      <Media left href="#">
-        <Media 
-          object 
-          data-src="https://picsum.photos/200/200" 
-          src="https://picsum.photos/200/200"
-          style={{height:'100px'}}
-          alt="=(" />
-      </Media>
-      <Media body>
-        <Media heading>
-          {author}, written the {date}  
+    <div className='commentary-card'>
+      <Media>
+        <Media left href="#">
+          <Media 
+            object 
+            data-src="https://picsum.photos/200/200" 
+            src="https://picsum.photos/200/200"
+            style={{height:'100px'}}
+            alt="=(" />
         </Media>
-        {content}
+        <Media body>
+          <Media heading className='custom-container'>
+            <p className="author-style">{author}</p>
+            <p className="date-style"> , the {date}</p>
+          </Media>
+          <em>"{content}"</em>
+        </Media>
       </Media>
-    </Media>
+    </div>
   );
 };
 
