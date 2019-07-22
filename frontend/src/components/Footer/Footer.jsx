@@ -23,7 +23,7 @@ export default class Example extends React.Component {
   render() {
     return (
       <div className='myFooter'>
-        <Navbar color="light" light expand="md">
+        <Navbar color="dark" dark expand="md">
           <Nav className="ml-auto" navbar>
             <div className='myContainer'>
               <NavItem>

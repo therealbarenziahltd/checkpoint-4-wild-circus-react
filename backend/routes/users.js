@@ -10,7 +10,7 @@ const userController = require('../controllers/usersController');
 router.post('/', passport.authenticate('jwt', { session: false }), userController.create);
 
 //READ ALL (private)
-router.get('/', passport.authenticate('jwt', { session: false }), userController.index);
+router.get('/', userController.index);
 
 //READ ONE (private)
 router.get('/:id', passport.authenticate('jwt', { session: false }), userController.show);

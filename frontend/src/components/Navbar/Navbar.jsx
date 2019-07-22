@@ -61,7 +61,7 @@ class Navnav extends React.Component {
   render() {
     return (
       <div className='myNavbar'>
-        <Navbar color="light" light expand="md">
+        <Navbar color="dark" dark expand="md">
           <NavbarBrand href="/home">Wild Circus</NavbarBrand>
           <NavbarToggler onClick={() => this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>

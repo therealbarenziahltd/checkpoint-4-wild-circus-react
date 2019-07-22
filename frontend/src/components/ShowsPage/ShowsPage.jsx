@@ -35,7 +35,7 @@ export default class ShowsPage extends Component {
                 city={show.city}
                 date={prettifyDate(show.date)}
                 pictures={show.pictures}
-              />;
+              />
             </Col>;
           })}
         </Row>

@@ -68,10 +68,25 @@ class ShowPicturesCarousel extends Component {
         previous={this.previous}
         className='my-carousel'
       >
-        <CarouselIndicators items={this.props.pictures} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
+        <CarouselIndicators 
+          items={this.props.pictures} 
+          activeIndex={activeIndex} 
+          onClickHandler={this.goToIndex} 
+          className="carousel-controller"
+        />
         {slides}
-        <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
-        <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
+        <CarouselControl 
+          direction="prev"
+          directionText="Previous" 
+          onClickHandler={this.previous}
+          className="carousel-controller"
+        />
+        <CarouselControl
+          direction="next" 
+          directionText="Next"
+          onClickHandler={this.next}
+          className="carousel-controller"
+        />
       </Carousel>
     );
   }
