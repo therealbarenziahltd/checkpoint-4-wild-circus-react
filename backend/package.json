@@ -10,7 +10,7 @@
     "lint:fix": "./node_modules/.bin/eslint --fix . --ext .js,.jsx"
   },
   "dependencies": {
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "cookie-parser": "^1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^8.0.0",
